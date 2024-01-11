@@ -1,0 +1,179 @@
+body {
+     background: url(../images/background-2.jpg);
+     background-size: cover;
+     margin: 0px;
+     background-attachment: fixed;
+}
+
+/* font-family: 'Montserrat', sans-serif; */
+
+.flex {
+    display: flex;
+}
+
+.container {
+    margin: 0px;
+    justify-content: space-between;
+    color: white;
+    z-index: 2;
+}
+
+header {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.head-flex {
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.add-button {
+    border: 2px solid orangered;
+    width: 120px;
+    height: 40px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: transparent;
+    border: 0pxs;
+    color: white;
+    margin: 0px 10px 0px 0px; 
+}
+
+.flexbox {
+    background-color: rgba(0, 0, 0, 0.489);
+    margin: 20px 15px 0px 15px;
+}
+
+.flexbox2 {
+    width: 35%;
+    flex-direction: column;
+
+}
+
+.flexbox1 {
+    width: 60%;
+}
+
+
+
+.book img {
+    width: 200px;
+    height: 300px;
+    float: left;
+}
+
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+.book img {
+    margin: 0px 10px 0px 0px;
+}
+
+.book-flex2 {
+    font-family: 'Montserrat', sans-serif;
+    margin: 2px 0px 0px 5px;
+}
+
+.book-flex2 h2 {
+    position: relative;
+    bottom: 20px;
+}
+
+.book-title {
+    color: white;
+    text-decoration:none;
+
+}
+
+.right-title {
+    margin: 5px;
+    text-align: center;
+    font-family: 'Bungee Spice', sans-serif;
+}
+
+.quote {
+    font-family: 'Bungee Spice', sans-serif;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.author {
+    font-family: 'Montserrat', sans-serif;
+    text-align: right;
+    margin: 4px 0px 0px 5px;
+}
+
+
+
+.right-notes {
+    font-family: 'Montserrat', sans-serif;
+    margin: 5px;
+}
+
+.button-h2 {
+    background-color: transparent;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    border: 0px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.input-image {
+    width: 200px;
+    height: 300px;
+}
+
+.delete-book {
+    border: 2px solid orangered;
+    width: 120px;
+    height: 40px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: transparent;
+    border: 0pxs;
+    color: white;
+    text-align: center;
+    align-self: flex-end;
+    margin: 10px 5px 0px 0px;
+}
+
+select {
+    border: 2px solid orangered;
+    font-family: 'Montserrat', sans-serif;
+    background-color: transparent;
+    border: 0pxs;
+    color: white;
+    text-align: center;
+    width: 200px;
+    height: 40px;
+    background-color: transparent;
+}
+
+.sort-button {
+    border: 2px solid orangered;
+    font-family: 'Montserrat', sans-serif;
+    background-color: transparent;
+    border: 0pxs;
+    color: white;
+    text-align: center;
+    width: 80px;
+    height: 40px;
+}
+
+.sort-option {
+    border: 2px solid orangered;
+    font-family: 'Montserrat', sans-serif;
+    background-color: transparent;
+    background: transparent;
+    border: 0pxs;
+    color: black;
+    text-align: center;
+}
+
+.hiddenDelete {
+    display: none;
+}

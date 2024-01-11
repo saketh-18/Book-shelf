@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <title>Book Shelf</title>
+</head>
+<body>
+    <div class="container flex">
+        <div class="flexbox1 flexbox">
+            <header>
+                <div class="head-flex flex">
+                <h1>The books i've read</h1>
+                <div class="sort-container">
+                    <form action="/sort-books" method="post">
+                        <label for="sortBooks">Sort Books by:</label>
+                        <select id="sortBooks" name="sortOption" class="sort-dropdown">
+                            <option value="ratingHighToLow" class="sort-option">Rating High to Low</option>
+                            <option value="ratingLowToHigh" class="sort-option">Rating Low to High</option>
+                            <option value="recencyOldToNew" class="sort-option">Recency Old to New</option>
+                            <option value="recencyNewToOld" class="sort-option">Recency New to Old</option>
+                        </select>
+                        <button type="submit" class="sort-button">Sort</button>
+                    </form>
+                </div>
+                <form action="/add" method="get"><input type="submit" value="Add Book" class="add-button"></form>
+            </div>
+                <p>Tiny summary but detailed notes for each. Use the ISBN number to find it from your local library or anywhere else. This page will constantly update as I read more, so bookmark it if you want to check back in a few months.
+
+                Sorted with my top recommendations up top. Sort by title, newest, or best.
+                
+                And please read this FAQ page about these notes, if you have any questions. You can also email me.</p>
+            </header>
+            <% books.forEach((book) => { %>
+                <div class="book clearfix flex">
+                    
+                        <div class="book-flex1">
+                            <form action="/book-image" method="post" id="book-image">
+                                <input type="hidden" name="bookId" value="<%= book.isbn %>">
+                             <input type="image" src="https://covers.openlibrary.org/b/isbn/<%= book.isbn %>-L.jpg?default=false" alt="Cant fetch book cover" name="book-image"  class="input-image selectBook"   value="<%= book.isbn %>">
+                        </form></div>
+                        <div class="book-flex2">
+                            <form action="/book-text" method="post" id="book-image">
+                            <input type="hidden" name="bookId" value="<%= book.isbn %>">
+                            <input type="submit" name="booktitle"  value="<%= book.title %>" class="button-h2 selectBook">
+                        </form>
+                            <p class ="rating" > Date Completed : <%= book.date %> </p>
+                            <h3>Rating : <%= book.rating %></h3>
+                            <p><%= book.summary %></p>
+                            <form action="/delete" method="post" class="flex" style="flex-direction: column;"  >
+                                <input type="hidden" name="dltHidden"  value="<%= selected.isbn %>">
+                                <input type="submit" value="Delete Book" id="hiddenDelete" class="delete-book">
+                        </form>
+                        </div>
+                    
+                </div>
+                <hr>
+            <% }) %>
+        </div>
+        <div class="flexbox2 flexbox flex">
+            <% if(selected) { %>
+                <h2 class="right-title"><%= selected.title %></h2>
+                <p class="quote"><%= notes %></p>
+                <p class="author"> <%= author %></p>
+                <p class="right-notes"><%= selected.notes %></p>
+                <% } %>
+        </div>
+    </div>
+</body>
+</html>

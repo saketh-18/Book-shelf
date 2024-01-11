@@ -1,0 +1,23 @@
+.add-book {
+     margin: 20px 0px 0px 0px;
+    /* background-color: rgba(0, 0, 0, 0.489); */
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+    /* width: 50%; */
+    color: white;
+    border-radius: 6px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.add-book input {
+    margin: 5px 0px;
+    width: 100%;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 10vh;
+}
